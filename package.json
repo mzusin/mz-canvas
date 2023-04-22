@@ -1,13 +1,54 @@
 {
   "name": "mz-canvas",
   "version": "1.0.0",
-  "description": "The TypeScript-based library for manipulating canvas element.",
+  "description": "The TypeScript-based library for manipulating <canvas> element and 2D graphics in the browser.",
   "type": "module",
-  "main": "index.js",
+  "main": "./dist/mz-canvas.min.js",
+  "module": "./dist/mz-canvas.esm.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:all": "npm run build:browser & npm run build:esm",
+    "watch:all": "npm run watch:browser & npm run watch:esm",
+    "build:browser": "node run/browser.js",
+    "watch:browser": "node run/browser.js -- watch",
+    "build:esm": "node run/esm.js",
+    "watch:esm": "node run/esm.js -- watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "eslint": "eslint ./src/**",
+    "typescript-declarations": "tsc --emitDeclarationOnly",
+    "docs:website": "http-server ./docs",
+    "docs:build": "node ./src/docs/generator/index.js",
+    "docs:watch": "nodemon ./src/docs/generator/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "canvas",
+    "canvas2d",
+    "canvas-api",
+    "canvas-element",
+    "canvasjs "
+  ],
+  "author": "Miriam Zusin <miriam.zusin@gmail.com>",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mzusin/mz-canvast"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      ".git",
+      "node_modules/**/node_modules"
+    ],
+    "verbose": false,
+    "watch": [
+      "src/"
+    ],
+    "ext": "js,json,html,css,md,ts,tsx,glsl"
+  }
 }
