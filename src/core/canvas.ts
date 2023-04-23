@@ -1,17 +1,4 @@
-export interface ICanvas {
-    width: number;
-    height: number;
-
-    id?: string;
-    classes?: string;
-    style?: string;
-    title?: string;
-    tabindex?: number;
-
-    // accessibility --------
-    role?: string;
-    fallback?: string;
-}
+import { ICanvas, IFillProps, IStrokeProps } from '../interfaces';
 
 const setAttributes = ($canvas: HTMLCanvasElement, attributes: [string, string|number|undefined][]) => {
     for(const attr of attributes){
@@ -51,12 +38,7 @@ export const canvas = (props: ICanvas) => {
     return { ctx, $canvas };
 };
 
-export interface IStrokeProps {
-    strokeStyle?: string;
-    lineWidth?: number;
-}
-
-export const stroke = (ctx: CanvasRenderingContext2D, props: IStrokeProps) => {
+export const stroke = (props: IStrokeProps, ctx: CanvasRenderingContext2D) => {
     if(props.lineWidth){
         ctx.lineWidth = props.lineWidth;
     }
@@ -66,11 +48,7 @@ export const stroke = (ctx: CanvasRenderingContext2D, props: IStrokeProps) => {
     }
 };
 
-export interface IFillProps {
-    fillStyle?: string;
-}
-
-export const fill = (ctx: CanvasRenderingContext2D, props: IFillProps) => {
+export const fill = (props: IFillProps, ctx: CanvasRenderingContext2D) => {
     if(props.fillStyle){
         ctx.fillStyle = props.fillStyle;
     }

@@ -1,20 +1,11 @@
 import { fill, stroke } from '../canvas';
-import { Vector2 } from 'mz-math/types/types';
+import { IRectPathProps, IPathProps, IRectProps } from '../../interfaces';
 
-export interface IRectProps {
-    x: number;
-    y: number;
-    w: number;
-    h: number;
-    radii?: number|number[]; // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/roundRect
-
-    clear?: boolean;
-    fillStyle?: string;
-    strokeStyle?: string;
-    lineWidth?: number;
-}
-
-export const rect = (ctx: CanvasRenderingContext2D, props: IRectProps) => {
+/**
+ * Draw a rectangle including rounded.
+ * Can also "clear the rect".
+ */
+export const rect = (props: IRectProps, ctx: CanvasRenderingContext2D) => {
 
     const { x, y, w, h} = props;
 
@@ -24,8 +15,8 @@ export const rect = (ctx: CanvasRenderingContext2D, props: IRectProps) => {
     }
 
     if(props.radii){
-        fill(ctx, props);
-        stroke(ctx, props);
+        fill(props, ctx);
+        stroke(props, ctx);
 
         ctx.beginPath();
 
@@ -42,32 +33,25 @@ export const rect = (ctx: CanvasRenderingContext2D, props: IRectProps) => {
     }
 
     if(props.fillStyle){
-        fill(ctx, props);
+        fill(props, ctx);
         ctx.fillRect(x, y, w, h);
     }
 
     if(props.strokeStyle){
-        stroke(ctx, props);
+        stroke(props, ctx);
         ctx.strokeRect(x, y, w, h);
     }
 };
 
-export interface IPathProps {
-
-    points: Vector2[];
-    closed?: boolean;
-
-    fillStyle?: string;
-    strokeStyle?: string;
-    lineWidth?: number;
-}
-
-export const path = (ctx: CanvasRenderingContext2D, props: IPathProps) => {
+/**
+ * Used to draw polynomials like triangles etc.
+ */
+export const path = (props: IPathProps, ctx: CanvasRenderingContext2D) => {
 
     const { points } = props;
 
-    fill(ctx, props);
-    stroke(ctx, props);
+    fill(props, ctx);
+    stroke(props, ctx);
 
     ctx.beginPath();
 
@@ -94,4 +78,36 @@ export const path = (ctx: CanvasRenderingContext2D, props: IPathProps) => {
         ctx.stroke();
     }
 
+};
+
+/**
+ * Get Path2D of rectangle, and optionally draw it.
+ */
+export const rectPath = (props: IRectPathProps, ctx?: CanvasRenderingContext2D) : Path2D => {
+
+    const { x, y, w, h} = props;
+
+    const path = new Path2D();
+
+    if(props.radii){
+        // @ts-ignore
+        path.roundRect(x, y, w, h, props.radii)
+    }
+    else{
+        path.rect(x, y, w, h);
+    }
+
+    if(!ctx) return path;
+
+    if(props.fillStyle){
+        fill(props, ctx);
+        ctx.fill(path);
+    }
+
+    if(props.strokeStyle){
+        stroke(props, ctx);
+        ctx.stroke(path);
+    }
+
+    return path;
 };

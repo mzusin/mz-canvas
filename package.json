@@ -65,6 +65,7 @@
     "karma-spec-reporter": "^0.0.36"
   },
   "dependencies": {
-    "mz-math": "^3.0.5"
+    "mz-math": "^3.0.5",
+    "mz-svg": "^1.0.9"
   }
 }
