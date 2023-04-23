@@ -20,7 +20,7 @@
         height: 300,
       });
 
-      mzCanvas.circle({
+      mzCanvas.circlePath({
           cx: 100,
           cy: 100,
           r: 50,
@@ -35,7 +35,7 @@
         height: 300,
       });
 
-      mzCanvas.circle({
+      mzCanvas.circlePath({
           cx: 100,
           cy: 100,
           r: 50,
@@ -51,7 +51,7 @@
         height: 300,
       });
 
-      mzCanvas.circle({
+      mzCanvas.circlePath({
           cx: 100,
           cy: 100,
           r: 50,
@@ -67,7 +67,7 @@
         height: 300,
       });
 
-      mzCanvas.circle({
+      mzCanvas.circlePath({
           cx: 100,
           cy: 100,
           r: 50,
@@ -79,10 +79,33 @@
       document.body.append($canvas);
     };
 
+    const test5 = () => {
+        const { ctx, $canvas } = mzCanvas.canvas({
+            width: 300,
+            height: 300,
+        });
+
+        mzCanvas.circlePath({
+            cx: 100,
+            cy: 100,
+            r: 50,
+            startAngleRad: 0,
+            endAngleRad: Math.PI / 2,
+            counterclockwise: true,
+
+            fillStyle: '#366d8c',
+            strokeStyle: '#0f2b38',
+            lineWidth: 15,
+        }, ctx);
+
+        document.body.append($canvas);
+    };
+
     test1();
     test2();
     test3();
     test4();
+    test5();
   </script>
 </body>
 </html>
