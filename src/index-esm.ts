@@ -1,1 +1,1 @@
-export * from './main/linear-algebra/vector';
+export * from './core/first';

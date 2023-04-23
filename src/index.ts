@@ -1,7 +1,7 @@
-import * as vector from './main/linear-algebra/vector';
+import * as first from './core/first';
 
 const api = {
-    ...vector,
+    ...first,
 };
 
 declare global {
@@ -12,4 +12,4 @@ declare global {
 
 window.mzCanvas = window.mzCanvas || api;
 
-export * from './main/linear-algebra/vector';
+export * from './core/first';
