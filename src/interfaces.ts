@@ -49,7 +49,10 @@ export interface ICircle {
     r: number;
     startAngleRad?: number;
     endAngleRad?: number;
+    counterclockwise?: boolean;
 }
 
 export interface ICircleProps extends ICircle, IStrokeProps, IFillProps { }
+
+export interface ICirclePathProps extends ICircle, IStrokeProps, IFillProps { }
 
