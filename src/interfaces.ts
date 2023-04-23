@@ -41,7 +41,15 @@ export interface IPathProps extends IStrokeProps, IFillProps {
     closed?: boolean;
 }
 
-export interface IRectPathProps extends IRect, IStrokeProps, IFillProps {
+export interface IRectPathProps extends IRect, IStrokeProps, IFillProps { }
 
+export interface ICircle {
+    cx: number;
+    cy: number;
+    r: number;
+    startAngleRad?: number;
+    endAngleRad?: number;
 }
+
+export interface ICircleProps extends ICircle, IStrokeProps, IFillProps { }
 

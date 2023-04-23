@@ -1,5 +1,5 @@
 import { fill, stroke } from '../canvas';
-import { IRectPathProps, IPathProps, IRectProps } from '../../interfaces';
+import { IRectPathProps, IPathProps, IRectProps, ICircleProps } from '../../interfaces';
 
 /**
  * Draw a rectangle including rounded.
@@ -81,7 +81,7 @@ export const path = (props: IPathProps, ctx: CanvasRenderingContext2D) => {
 };
 
 /**
- * Get Path2D of rectangle, and optionally draw it.
+ * Get Path2D of a rectangle, and optionally draw it.
  */
 export const rectPath = (props: IRectPathProps, ctx?: CanvasRenderingContext2D) : Path2D => {
 
@@ -111,3 +111,36 @@ export const rectPath = (props: IRectPathProps, ctx?: CanvasRenderingContext2D) 
 
     return path;
 };
+
+/**
+ * Draw a circle, or it's segment.
+ */
+export const circle = (props: ICircleProps, ctx: CanvasRenderingContext2D) => {
+    const { cx, cy,r} = props;
+
+    const startAngleRad = props.startAngleRad === undefined ? 0 : props.startAngleRad;
+    const endAngleRad = props.endAngleRad === undefined ? 2 * Math.PI : props.endAngleRad;
+
+    ctx.beginPath();
+
+    fill(props, ctx);
+    stroke(props, ctx);
+
+    ctx.arc(cx, cy, r, startAngleRad,endAngleRad);
+
+    if(props.fillStyle){
+        ctx.fill();
+    }
+
+    if(props.strokeStyle){
+        stroke(props, ctx);
+        ctx.stroke();
+    }
+};
+
+/**
+ * Get Path2D of a circle, and optionally draw it.
+
+export const circlePath = (props: IRectPathProps, ctx?: CanvasRenderingContext2D) => {
+
+};*/
