@@ -50,3 +50,28 @@ export const canvas = (props: ICanvas) => {
 
     return { ctx, $canvas };
 };
+
+export interface IStrokeProps {
+    strokeStyle?: string;
+    lineWidth?: number;
+}
+
+export const stroke = (ctx: CanvasRenderingContext2D, props: IStrokeProps) => {
+    if(props.lineWidth){
+        ctx.lineWidth = props.lineWidth;
+    }
+
+    if(props.strokeStyle){
+        ctx.strokeStyle = props.strokeStyle;
+    }
+};
+
+export interface IFillProps {
+    fillStyle?: string;
+}
+
+export const fill = (ctx: CanvasRenderingContext2D, props: IFillProps) => {
+    if(props.fillStyle){
+        ctx.fillStyle = props.fillStyle;
+    }
+};
