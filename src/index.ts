@@ -1,7 +1,9 @@
-import * as first from './core/canvas';
+import * as canvas from './core/canvas';
+import * as primitiveShapes from './core/shapes/primitive-shapes';
 
 const api = {
-    ...first,
+    ...canvas,
+    ...primitiveShapes,
 };
 
 declare global {
@@ -13,3 +15,4 @@ declare global {
 window.mzCanvas = window.mzCanvas || api;
 
 export * from './core/canvas';
+export * from './core/shapes/primitive-shapes';

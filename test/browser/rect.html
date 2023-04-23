@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <style>
+      canvas {
+        border: 1px solid #efefef;
+        margin: 1rem;
+      }
+    </style>
+</head>
+<body>
+
+  <script src="../../dist/mz-canvas.min.js"></script>
+  <script>
+    const test1 = () => {
+      const { ctx, $canvas } = mzCanvas.canvas({
+        width: 300,
+        height: 300,
+      });
+
+      mzCanvas.rect(ctx, {
+        x: 10,
+        y: 10,
+        w: 20,
+        h: 30,
+      });
+
+      document.body.append($canvas);
+    };
+
+    const test2 = () => {
+      const { ctx, $canvas } = mzCanvas.canvas({
+        width: 300,
+        height: 300,
+      });
+
+      mzCanvas.rect(ctx, {
+        x: 0,
+        y: 0,
+        w: 300,
+        h: 300,
+        fill: '#366d8c',
+      });
+
+      document.body.append($canvas);
+    };
+
+    const test3 = () => {
+      const { ctx, $canvas } = mzCanvas.canvas({
+        width: 300,
+        height: 300,
+      });
+
+      mzCanvas.rect(ctx, {
+        x: 0,
+        y: 0,
+        w: 300,
+        h: 300,
+        stroke: '#366d8c',
+      });
+
+      document.body.append($canvas);
+    };
+
+    const test4 = () => {
+      const { ctx, $canvas } = mzCanvas.canvas({
+        width: 300,
+        height: 300,
+      });
+
+      mzCanvas.rect(ctx, {
+        x: 0,
+        y: 0,
+        w: 300,
+        h: 300,
+        fill: '#366d8c',
+        stroke: '#0f2b38',
+        lineWidth: 15,
+      });
+
+      document.body.append($canvas);
+    };
+
+    test1();
+    test2();
+    test3();
+    test4();
+  </script>
+</body>
+</html>
