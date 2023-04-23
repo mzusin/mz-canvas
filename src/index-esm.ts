@@ -1,1 +1,1 @@
-export * from './core/first';
+export * from './core/canvas';

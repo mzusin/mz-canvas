@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/core/canvas.ts"],
+  "sourcesContent": ["export interface ICanvas {\n    width: number;\n    height: number;\n}\n\nexport const createCanvas = (props: ICanvas) => {\n\n    const canvas = document.createElement('canvas');\n    canvas.width = props.width;\n    canvas.height = props.height;\n\n    const ctx = canvas.getContext('2d');\n\n    return { ctx, canvas };\n};"],
+  "mappings": ";;;;;;;;AAKO,IAAMA,EAAgBC,GAAmB,CAE5C,IAAMC,EAAS,SAAS,cAAc,QAAQ,EAC9C,OAAAA,EAAO,MAAQD,EAAM,MACrBC,EAAO,OAASD,EAAM,OAIf,CAAE,IAFGC,EAAO,WAAW,IAAI,EAEpB,OAAAA,CAAO,CACzB",
+  "names": ["createCanvas", "props", "canvas"]
+}

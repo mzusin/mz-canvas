@@ -23,7 +23,7 @@ module.exports = function(config) {
       nodeResolve: true,
       // set compatibility mode to all
       compatibility: 'auto',
-      fileExtensions: ['.ts']
+      // fileExtensions: ['.ts']
     },
 
     plugins: [
@@ -40,18 +40,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      { pattern: 'test/**/*.test.js', type: 'module' },
-      { pattern: 'test/**/*.test.ts', type: 'module' }
-      //'./test/*.test.js',
-      /*path.join(__dirname, './dist/plugins/tcrs-binding-labels.min.js'),
-      path.join(__dirname, './dist/plugins/tcrs-generated-labels.min.js'),
-      path.join(__dirname, './dist/plugins/tcrs-storage.min.js'),
-      path.join(__dirname, './dist/plugins/tcrs-moving-tooltip.min.js'),
-      path.join(__dirname, './dist/toolcool-range-slider.min.js'),
-      './test/toolcool-range-slider.min.js',
-
-      './test/modules/!**!/!*.test.js',
-      './test/index.html',*/
+      path.join(__dirname, './dist/mz-canvas.min.js'),
+      // { pattern: 'test/**/*.test.js', type: 'module' },
+      './test/*.test.js',
     ],
 
     // list of files / patterns to exclude
@@ -80,7 +71,7 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+    //autoWatch: false,
 
     // start these browsers
     // available browser launchers: https://www.npmjs.com/search?q=keywords:karma-launcher
@@ -88,7 +79,7 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true,
+    //singleRun: true,
 
     // Concurrency level
     // how many browser instances should be started simultaneously

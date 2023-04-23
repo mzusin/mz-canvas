@@ -1,4 +1,4 @@
-import * as first from './core/first';
+import * as first from './core/canvas';
 
 const api = {
     ...first,
@@ -12,4 +12,4 @@ declare global {
 
 window.mzCanvas = window.mzCanvas || api;
 
-export * from './core/first';
+export * from './core/canvas';
