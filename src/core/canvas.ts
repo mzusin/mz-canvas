@@ -11,7 +11,7 @@ const setAttributes = ($canvas: HTMLCanvasElement, attributes: [string, string|n
     }
 };
 
-const setContextProps = (props: [string, string|number|undefined][], ctx: CanvasRenderingContext2D) => {
+export const setContextProps = (props: [string, string|number|undefined][], ctx: CanvasRenderingContext2D) => {
     for(const prop of props){
 
         const value = prop[1];
