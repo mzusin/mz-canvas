@@ -55,6 +55,7 @@ export const rect = (ctx: CanvasRenderingContext2D, props: IRectProps) => {
 export interface IPathProps {
 
     points: Vector2[];
+    closed?: boolean;
 
     fillStyle?: string;
     strokeStyle?: string;
@@ -81,7 +82,9 @@ export const path = (ctx: CanvasRenderingContext2D, props: IPathProps) => {
         }
     }
 
-    ctx.closePath();
+    if(props.closed){
+        ctx.closePath();
+    }
 
     if(props.fillStyle){
         ctx.fill();

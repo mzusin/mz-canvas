@@ -21,10 +21,12 @@
       });
 
       mzCanvas.path(ctx, {
-       points: [[75, 50], [100, 75], [100, 25]],
-          fillStyle: '#efefef',
-          strokeStyle: '#163a86',
-          lineWidth: 2,
+        points: [[75, 50], [100, 75], [100, 25]],
+        closed: true,
+
+        fillStyle: '#efefef',
+        strokeStyle: '#163a86',
+        lineWidth: 2,
       });
 
       document.body.append($canvas);
