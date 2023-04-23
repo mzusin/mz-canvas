@@ -63,5 +63,8 @@
     "karma-chrome-launcher": "^3.2.0",
     "karma-jasmine": "^5.1.0",
     "karma-spec-reporter": "^0.0.36"
+  },
+  "dependencies": {
+    "mz-math": "^3.0.5"
   }
 }
