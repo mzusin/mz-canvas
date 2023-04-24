@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <style>
+      canvas {
+        border: 1px solid #efefef;
+        margin: 1rem;
+      }
+    </style>
+</head>
+<body>
+
+  <script src="../../../dist/mz-canvas.min.js"></script>
+  <script>
+    const triangle = () => {
+      const { ctx, $canvas } = mzCanvas.canvas({
+        width: 300,
+        height: 300,
+      });
+
+      mzCanvas.polynomialPath({
+        points: [[75, 50], [100, 75], [100, 25]],
+        closed: true,
+
+        fillStyle: '#efefef',
+        strokeStyle: '#163a86',
+        lineWidth: 2,
+      }, ctx);
+
+      document.body.append($canvas);
+    };
+
+    triangle();
+  </script>
+</body>
+</html>

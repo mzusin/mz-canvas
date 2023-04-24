@@ -35,6 +35,14 @@ export interface IFillProps {
     shadowBlur?: number;
     shadowColor?: string;
 }
+export interface ILine {
+    x1: number;
+    y1: number;
+    x2: number;
+    y2: number;
+}
+export interface ILineProps extends ILine, IStrokeProps, IFillProps {
+}
 export interface IRect {
     x: number;
     y: number;
@@ -49,8 +57,6 @@ export interface IPathProps extends IStrokeProps, IFillProps {
     points: Vector2[];
     closed?: boolean;
 }
-export interface IRectPathProps extends IRect, IStrokeProps, IFillProps {
-}
 export interface ICircle {
     cx: number;
     cy: number;
@@ -60,8 +66,6 @@ export interface ICircle {
     counterclockwise?: boolean;
 }
 export interface ICircleProps extends ICircle, IStrokeProps, IFillProps {
-}
-export interface ICirclePathProps extends ICircle, IStrokeProps, IFillProps {
 }
 export interface ITextProps extends IStrokeProps, IFillProps {
     text: string;

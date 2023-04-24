@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <style>
+      canvas {
+        border: 1px solid #efefef;
+        margin: 1rem;
+      }
+    </style>
+</head>
+<body>
+
+  <script src="../../../dist/mz-canvas.min.js"></script>
+  <script>
+    const test1 = () => {
+      const { ctx, $canvas } = mzCanvas.canvas({
+        width: 300,
+        height: 300,
+      });
+
+      mzCanvas.linePath({
+        x1: 10,
+        y1: 10,
+        x2: 100,
+        y2: 100,
+      }, ctx);
+
+      document.body.append($canvas);
+    };
+
+    const test2 = () => {
+      const { ctx, $canvas } = mzCanvas.canvas({
+        width: 300,
+        height: 300,
+      });
+
+      mzCanvas.linePath({
+          x1: 10,
+          y1: 10,
+          x2: 100,
+          y2: 100,
+        strokeStyle: '#8e3da4',
+      }, ctx);
+
+      document.body.append($canvas);
+    };
+
+    const test3 = () => {
+      const { ctx, $canvas } = mzCanvas.canvas({
+        width: 300,
+        height: 300,
+      });
+
+      mzCanvas.linePath({
+          x1: 10,
+          y1: 10,
+          x2: 100,
+          y2: 100,
+        strokeStyle: '#366d8c',
+      }, ctx);
+
+      document.body.append($canvas);
+    };
+
+    const test4 = () => {
+      const { ctx, $canvas } = mzCanvas.canvas({
+        width: 300,
+        height: 300,
+      });
+
+      mzCanvas.linePath({
+          x1: 10,
+          y1: 10,
+          x2: 100,
+          y2: 100,
+        strokeStyle: '#0f2b38',
+        lineWidth: 15,
+      }, ctx);
+
+      document.body.append($canvas);
+    };
+
+    const test5 = () => {
+        const { ctx, $canvas } = mzCanvas.canvas({
+            width: 300,
+            height: 300,
+        });
+
+        mzCanvas.linePath({
+            x1: 10,
+            y1: 10,
+            x2: 100,
+            y2: 100,
+            strokeStyle: 'red',
+            lineWidth: 5,
+        }, ctx);
+
+        document.body.append($canvas);
+    };
+
+    test1();
+    test2();
+    test3();
+    test4();
+    test5();
+  </script>
+</body>
+</html>
