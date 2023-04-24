@@ -3,8 +3,8 @@ declare const api: {
     linePath: (props: import("./interfaces").ILineProps, ctx?: CanvasRenderingContext2D | undefined) => Path2D;
     rect: (props: import("./interfaces").IRectProps, ctx: CanvasRenderingContext2D) => void;
     rectPath: (props: import("./interfaces").IRectProps, ctx?: CanvasRenderingContext2D | undefined) => Path2D;
-    polynomial: (props: import("./interfaces").IPathProps, ctx: CanvasRenderingContext2D) => void;
-    polynomialPath: (props: import("./interfaces").IPathProps, ctx?: CanvasRenderingContext2D | undefined) => Path2D;
+    polynomial: (props: import("./interfaces").IPolynomialProps, ctx: CanvasRenderingContext2D) => void;
+    polynomialPath: (props: import("./interfaces").IPolynomialProps, ctx?: CanvasRenderingContext2D | undefined) => Path2D;
     circle: (props: import("./interfaces").ICircleProps, ctx: CanvasRenderingContext2D) => void;
     circlePath: (props: import("./interfaces").ICircleProps, ctx?: CanvasRenderingContext2D | undefined) => Path2D;
     setContextProps: (props: [string, string | number | undefined][], ctx: CanvasRenderingContext2D) => void;

@@ -1,8 +1,8 @@
 import { Vector2 } from 'mz-math/types/types';
 
 export interface ICanvas {
-    width: number;
-    height: number;
+    width: number|string;
+    height: number|string;
 
     id?: string;
     classes?: string;

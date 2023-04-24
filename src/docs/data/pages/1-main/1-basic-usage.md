@@ -18,7 +18,43 @@ Then you can import any function as follows:
 import { canvas } from 'mz-canvas';
 
 const { ctx, $canvas } = canvas({
-    width: 100,
-    height: 200
+    width: 100, // px
+    height: 200, // px
 });
+```
+
+You can also specify other units than pixels:
+
+```js
+import { canvas } from 'mz-canvas';
+
+const { ctx, $canvas } = canvas({
+    width: '100%',
+    height: '100%',
+});
+```
+
+The **canvas()** implements the following interfaces:
+
+```ts
+export interface ICanvas {
+    width: number|string;
+    height: number|string;
+
+    id?: string;
+    classes?: string;
+    style?: string;
+    title?: string;
+    tabindex?: number;
+
+    // accessibility --------
+    role?: string;
+    fallback?: string;
+    ariaLabel?: string;
+}
+
+export const canvas: (props: ICanvas) => {
+    ctx: CanvasRenderingContext2D | null;
+    $canvas: HTMLCanvasElement;
+};
 ```

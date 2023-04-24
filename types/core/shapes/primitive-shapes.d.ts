@@ -1,4 +1,4 @@
-import { IPathProps, IRectProps, ICircleProps, ILineProps } from '../../interfaces';
+import { IPolynomialProps, IRectProps, ICircleProps, ILineProps } from '../../interfaces';
 /**
  * Draw a line.
  */
@@ -19,11 +19,11 @@ export declare const rectPath: (props: IRectProps, ctx?: CanvasRenderingContext2
 /**
  * Used to draw polynomials like triangles etc.
  */
-export declare const polynomial: (props: IPathProps, ctx: CanvasRenderingContext2D) => void;
+export declare const polynomial: (props: IPolynomialProps, ctx: CanvasRenderingContext2D) => void;
 /**
  * Used to draw polynomials like triangles etc.
  */
-export declare const polynomialPath: (props: IPathProps, ctx?: CanvasRenderingContext2D) => Path2D;
+export declare const polynomialPath: (props: IPolynomialProps, ctx?: CanvasRenderingContext2D) => Path2D;
 /**
  * Draw a circle, or it's segment.
  */

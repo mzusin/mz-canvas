@@ -1,4 +1,5 @@
 import { ICanvas, IFillProps, IStrokeProps } from '../interfaces';
+import { isNumber } from 'mz-math';
 
 const setAttributes = ($canvas: HTMLCanvasElement, attributes: [string, string|number|undefined][]) => {
     for(const attr of attributes){
@@ -30,8 +31,12 @@ export const canvas = (props: ICanvas) => {
     // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Optimizing_canvas
     const dpr = window.devicePixelRatio;
 
-    $canvas.width = props.width * dpr;
-    $canvas.height = props.height * dpr;
+    const isNumericDims = isNumber(props.width) && isNumber(props.height);
+
+    if(isNumericDims){
+        $canvas.width = (props.width as number) * dpr;
+        $canvas.height = (props.height as number) * dpr;
+    }
 
     setAttributes($canvas, [
         ['id', props.id],
@@ -56,8 +61,8 @@ export const canvas = (props: ICanvas) => {
     ctx?.scale(dpr, dpr);
 
     // Set the "drawn" size of the canvas.
-    $canvas.style.width = `${ props.width }px`;
-    $canvas.style.height = `${ props.height }px`;
+    $canvas.style.width = isNumber(props.width) ? `${ props.width }px` : props.width.toString();
+    $canvas.style.height = isNumber(props.height) ? `${ props.height }px` : props.height.toString();
 
     return { ctx, $canvas };
 };

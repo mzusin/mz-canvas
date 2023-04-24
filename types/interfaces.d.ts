@@ -1,7 +1,7 @@
 import { Vector2 } from 'mz-math/types/types';
 export interface ICanvas {
-    width: number;
-    height: number;
+    width: number | string;
+    height: number | string;
     id?: string;
     classes?: string;
     style?: string;
@@ -53,7 +53,7 @@ export interface IRect {
 export interface IRectProps extends IRect, IStrokeProps, IFillProps {
     clear?: boolean;
 }
-export interface IPathProps extends IStrokeProps, IFillProps {
+export interface IPolynomialProps extends IStrokeProps, IFillProps {
     points: Vector2[];
     closed?: boolean;
 }
