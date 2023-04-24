@@ -8,6 +8,7 @@ declare const api: {
     circle: (props: import("./interfaces").ICircleProps, ctx: CanvasRenderingContext2D) => void;
     circlePath: (props: import("./interfaces").ICircleProps, ctx?: CanvasRenderingContext2D | undefined) => Path2D;
     setContextProps: (props: [string, string | number | undefined][], ctx: CanvasRenderingContext2D) => void;
+    setCanvasSize: ($canvas: HTMLCanvasElement, props: import("./interfaces").ICanvas, ctx: CanvasRenderingContext2D | null) => void;
     canvas: (props: import("./interfaces").ICanvas) => {
         ctx: CanvasRenderingContext2D | null;
         $canvas: HTMLCanvasElement;

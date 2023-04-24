@@ -82,6 +82,7 @@ declare module 'mz-canvas' {
     }
 
     export const setContextProps: (props: [string, string | number | undefined][], ctx: CanvasRenderingContext2D) => void;
+    export const setCanvasSize: ($canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D | null, props: ICanvas) => void;
 
     export const canvas: (props: ICanvas) => {
         ctx: CanvasRenderingContext2D | null;

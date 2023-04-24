@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <style>
+    html, body{
+        padding: 0;
+        margin: 0;
+    }
+
+    canvas {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+    }
+    </style>
+</head>
+<body>
+
+  <script src="../../dist/mz-canvas.min.js"></script>
+  <script>
+    const test1 = () => {
+        const canvasProps = {
+            width: '100vw',
+            height: '100vh',
+        };
+
+      const { ctx, $canvas } = mzCanvas.canvas(canvasProps);
+
+      mzCanvas.circle({
+          cx: 100,
+          cy: 100,
+          r: 750,
+          fillStyle: '#9c2dbd'
+      }, ctx);
+
+      document.body.append($canvas);
+
+      const resizeObserver = new ResizeObserver(() => {
+        mzCanvas.setCanvasSize($canvas, ctx, canvasProps);
+      });
+
+      resizeObserver.observe(document.body);
+    };
+
+    window.addEventListener('DOMContentLoaded', (event) => {
+        test1();
+    });
+
+  </script>
+</body>
+</html>

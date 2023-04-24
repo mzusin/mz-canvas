@@ -23,25 +23,45 @@ export const setContextProps = (props: [string, string|number|undefined][], ctx:
     }
 };
 
+export const setCanvasSize = ($canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D|null, props: ICanvas) => {
+
+    const isNumericDims = isNumber(props.width) && isNumber(props.height);
+    let _width = isNumericDims ? (props.width as number) : 0;
+    let _height = isNumericDims ? (props.height as number) : 0;
+
+    if(!isNumericDims){
+        const isCanvasInDOM = !!$canvas.parentNode;
+
+        if(!isCanvasInDOM){
+            document.body.append($canvas);
+        }
+
+        const rect = $canvas.getBoundingClientRect();
+        _width = rect.width;
+        _height = rect.height;
+
+        if(!isCanvasInDOM){
+            $canvas.remove();
+        }
+    }
+
+    // changing the size of the canvas clears it;
+    // save it, and then restore
+    const imageData = ctx?.getImageData(0, 0, $canvas.width, $canvas.height);
+
+    $canvas.width = _width;
+    $canvas.height = _height;
+    $canvas.style.width = `${ _width }px`;
+    $canvas.style.height = `${ _height }px`;
+
+    if(ctx && imageData ){
+        ctx.putImageData(imageData, 0, 0);
+    }
+};
+
 export const canvas = (props: ICanvas) => {
 
     const $canvas: HTMLCanvasElement = document.createElement('canvas');
-
-    // Get the DPR and size of the canvas.
-    // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Optimizing_canvas
-    const dpr = window.devicePixelRatio;
-
-    const isNumericDims = isNumber(props.width) && isNumber(props.height);
-
-    if(isNumericDims){
-        $canvas.width = (props.width as number) * dpr;
-        $canvas.height = (props.height as number) * dpr;
-    }
-    else{
-        const rect = $canvas.getBoundingClientRect();
-        $canvas.width = rect.width * dpr;
-        $canvas.height = rect.height * dpr;
-    }
 
     setAttributes($canvas, [
         ['id', props.id],
@@ -62,12 +82,7 @@ export const canvas = (props: ICanvas) => {
 
     const ctx = typeof $canvas.getContext === 'function' ? $canvas.getContext('2d') : null;
 
-    // Scale the context to ensure correct drawing operations.
-    ctx?.scale(dpr, dpr);
-
-    // Set the "drawn" size of the canvas.
-    $canvas.style.width = isNumber(props.width) ? `${ props.width }px` : props.width.toString();
-    $canvas.style.height = isNumber(props.height) ? `${ props.height }px` : props.height.toString();
+    setCanvasSize($canvas, ctx, props);
 
     return { ctx, $canvas };
 };
