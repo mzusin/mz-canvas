@@ -1,4 +1,6 @@
-# mzCanvas - a TypeScript-based library for manipulating canvas element and 2D graphics in the browser.
+# mzCanvas
+
+**mzCanvas** is a TypeScript-based library for manipulating canvas element and 2D graphics in the browser.
 
 ## Documentation 🔖
 ### Getting Started 
@@ -10,6 +12,16 @@
 - [Circle Path](https://canvas.mzsoft.org/pages/circle-path.html)
 - [Polynomial](https://canvas.mzsoft.org/pages/polynomial.html)
 ------------------------------
+
+```ts
+                  ___                                     
+                 (  _`\                                   
+  ___ ___   ____ | ( (_)   _ _   ___   _   _    _ _   ___ 
+/' _ ` _ `\(_  ,)| |  _  /'_` )/' _ `\( ) ( ) /'_` )/',__)
+| ( ) ( ) | /'/_ | (_( )( (_| || ( ) || \_/ |( (_| |\__, \
+(_) (_) (_)(____)(____/'`\__,_)(_) (_)`\___/'`\__,_)(____/
+
+```
 
 
 
