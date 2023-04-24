@@ -25,8 +25,13 @@ export const setContextProps = (props: [string, string|number|undefined][], ctx:
 export const canvas = (props: ICanvas) => {
 
     const $canvas: HTMLCanvasElement = document.createElement('canvas');
-    $canvas.width = props.width;
-    $canvas.height = props.height;
+
+    // Get the DPR and size of the canvas.
+    // https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Optimizing_canvas
+    const dpr = window.devicePixelRatio;
+
+    $canvas.width = props.width * dpr;
+    $canvas.height = props.height * dpr;
 
     setAttributes($canvas, [
         ['id', props.id],
@@ -46,6 +51,13 @@ export const canvas = (props: ICanvas) => {
     }
 
     const ctx = typeof $canvas.getContext === 'function' ? $canvas.getContext('2d') : null;
+
+    // Scale the context to ensure correct drawing operations.
+    ctx?.scale(dpr, dpr);
+
+    // Set the "drawn" size of the canvas.
+    $canvas.style.width = `${ props.width }px`;
+    $canvas.style.height = `${ props.height }px`;
 
     return { ctx, $canvas };
 };

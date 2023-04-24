@@ -8,12 +8,12 @@ describe('Primitive Shapes', () => {
                 height: 300,
             });
 
-            mzCanvas.rect(ctx, {
+            mzCanvas.rect({
                 x: 10,
                 y: 10,
                 w: 20,
                 h: 30,
-            });
+            }, ctx);
 
             // console.log($canvas.toDataURL())
 
