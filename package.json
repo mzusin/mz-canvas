@@ -1,6 +1,6 @@
 {
   "name": "mz-canvas",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "The TypeScript-based library for manipulating <canvas> element and 2D graphics in the browser.",
   "type": "module",
   "main": "./dist/mz-canvas.min.js",

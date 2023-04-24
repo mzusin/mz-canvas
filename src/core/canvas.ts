@@ -51,8 +51,8 @@ export const setCanvasSize = ($canvas: HTMLCanvasElement, ctx: CanvasRenderingCo
 
     $canvas.width = _width;
     $canvas.height = _height;
-    $canvas.style.width = `${ _width }px`;
-    $canvas.style.height = `${ _height }px`;
+    // $canvas.style.width = `${ _width }px`;
+    // $canvas.style.height = `${ _height }px`;
 
     if(ctx && imageData ){
         ctx.putImageData(imageData, 0, 0);
