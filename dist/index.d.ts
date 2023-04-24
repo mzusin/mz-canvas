@@ -21,7 +21,7 @@ declare module 'mz-canvas' {
         lineCap?: string;
         lineJoin?: string;
         miterLimit?: number;
-        lineDashSegments: number[];
+        lineDashSegments?: number[];
         lineDashOffset?: number;
     }
 

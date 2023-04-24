@@ -1,6 +1,6 @@
 /* 
 mzCanvas a TypeScript-based library for manipulating canvas element and 2D graphics in the browser.
-Version: 1.0.0
+Version: 1.0.1
 Author: Miriam Zusin     
 Contact: miriam.zusin@gmail.com
 Documentation: https://github.com/mzusin/mz-canvas
