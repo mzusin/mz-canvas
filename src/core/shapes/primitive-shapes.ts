@@ -15,6 +15,8 @@ export const rect = (props: IRectProps, ctx: CanvasRenderingContext2D) => {
     }
 
     if(props.radii){
+        ctx.save();
+
         fill(props, ctx);
         stroke(props, ctx);
 
@@ -29,8 +31,12 @@ export const rect = (props: IRectProps, ctx: CanvasRenderingContext2D) => {
         if(props.strokeStyle){
             ctx.stroke();
         }
+
+        ctx.restore();
         return;
     }
+
+    ctx.save();
 
     if(props.fillStyle){
         fill(props, ctx);
@@ -41,6 +47,8 @@ export const rect = (props: IRectProps, ctx: CanvasRenderingContext2D) => {
         stroke(props, ctx);
         ctx.strokeRect(x, y, w, h);
     }
+
+    ctx.restore();
 };
 
 /**
@@ -49,6 +57,8 @@ export const rect = (props: IRectProps, ctx: CanvasRenderingContext2D) => {
 export const path = (props: IPathProps, ctx: CanvasRenderingContext2D) => {
 
     const { points } = props;
+
+    ctx.save();
 
     fill(props, ctx);
     stroke(props, ctx);
@@ -78,6 +88,7 @@ export const path = (props: IPathProps, ctx: CanvasRenderingContext2D) => {
         ctx.stroke();
     }
 
+    ctx.restore();
 };
 
 /**
@@ -99,6 +110,8 @@ export const rectPath = (props: IRectPathProps, ctx?: CanvasRenderingContext2D) 
 
     if(!ctx) return path;
 
+    ctx.save();
+
     if(props.fillStyle){
         fill(props, ctx);
         ctx.fill(path);
@@ -108,6 +121,8 @@ export const rectPath = (props: IRectPathProps, ctx?: CanvasRenderingContext2D) 
         stroke(props, ctx);
         ctx.stroke(path);
     }
+
+    ctx.restore();
 
     return path;
 };
@@ -120,6 +135,8 @@ export const circle = (props: ICircleProps, ctx: CanvasRenderingContext2D) => {
 
     const startAngleRad = props.startAngleRad === undefined ? 0 : props.startAngleRad;
     const endAngleRad = props.endAngleRad === undefined ? 2 * Math.PI : props.endAngleRad;
+
+    ctx.save();
 
     ctx.beginPath();
 
@@ -136,6 +153,8 @@ export const circle = (props: ICircleProps, ctx: CanvasRenderingContext2D) => {
         stroke(props, ctx);
         ctx.stroke();
     }
+
+    ctx.restore();
 };
 
 /**
@@ -153,6 +172,8 @@ export const circlePath = (props: ICirclePathProps, ctx?: CanvasRenderingContext
 
     if(!ctx) return path;
 
+    ctx.save();
+
     if(props.fillStyle){
         fill(props, ctx);
         ctx.fill(path);
@@ -162,6 +183,8 @@ export const circlePath = (props: ICirclePathProps, ctx?: CanvasRenderingContext
         stroke(props, ctx);
         ctx.stroke(path);
     }
+
+    ctx.restore();
 
     return path;
 };

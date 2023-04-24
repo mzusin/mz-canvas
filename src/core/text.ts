@@ -5,6 +5,8 @@ export const text = (props: ITextProps, ctx: CanvasRenderingContext2D) => {
 
     const { text, x, y } = props;
 
+    ctx.save();
+
     setContextProps([
         ['font', props.font],
         ['textAlign', props.textAlign],
@@ -21,4 +23,6 @@ export const text = (props: ITextProps, ctx: CanvasRenderingContext2D) => {
         stroke(props, ctx);
         ctx.strokeText(text, x, y, props.maxWidth);
     }
+
+    ctx.restore();
 };
