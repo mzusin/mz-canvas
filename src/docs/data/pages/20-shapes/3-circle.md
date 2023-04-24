@@ -49,3 +49,20 @@ circle({
 document.body.append($canvas);
 ```
 
+The **circle()** implements the following interfaces:
+
+```ts
+export interface ICircle {
+    cx: number;
+    cy: number;
+    r: number;
+    startAngleRad?: number;
+    endAngleRad?: number;
+    counterclockwise?: boolean;
+}
+
+export interface ICircleProps extends ICircle, IStrokeProps, IFillProps { }
+
+export const circle: (props: ICircleProps, ctx: CanvasRenderingContext2D) => void;
+```
+

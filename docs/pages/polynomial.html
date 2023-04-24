@@ -17,8 +17,8 @@
   <link id="favicon-16" rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16.png" />
 
   <link rel="stylesheet" href="/highlight.js/styles/tokyo-night-dark.css" />
-  <link rel="stylesheet" href="/css/styles.1682340548556.css" />
-  <!--<link rel="stylesheet" href="/js/index.1682340548556.css" />-->
+  <link rel="stylesheet" href="/css/styles.1682364785901.css" />
+  <!--<link rel="stylesheet" href="/js/index.1682364785901.css" />-->
 
 </head>
 <body class="h-screen flex flex-col font-roboto bg-white dark:bg-slate-900 dark:text-slate-100">
@@ -124,7 +124,14 @@
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/rectangle.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Rectangle</a><a href="/pages/rectangle-path.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Rectangle Path</a><a href="/pages/circle.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Circle</a><a href="/pages/circle-path.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Circle Path</a><a href="/pages/polynomial.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-sky-500">Polynomial</a></div>
+    </div><div class="flex flex-col" data-links><a href="/pages/rectangle.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Rectangle</a><a href="/pages/rectangle-path.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Rectangle Path</a><a href="/pages/circle.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Circle</a><a href="/pages/circle-path.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Circle Path</a><a href="/pages/polynomial.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-sky-500">Polynomial</a><a href="/pages/polynomial-path.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Polynomial Path</a><a href="/pages/line.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Line</a><a href="/pages/line-path.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Line Path</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="30-interfaces">
+        Interfaces 
+        <svg data-arrow xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#626e7f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="ml-2 rotate-90" viewBox="0 0 24 24">
+          <path stroke="none" d="M0 0h24v24H0z"/>
+          <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
+        </svg>
+
+    </div><div class="flex flex-col" data-links><a href="/pages/fill-properties.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Fill Properties</a><a href="/pages/stroke-properties.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Stroke Properties</a></div>
       </div>
     </div>
 
@@ -149,9 +156,16 @@
 }, ctx);
 
 <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">append</span>($canvas);</code></pre>
+<p class="mb-4">The <strong class="font-bold">polynomial()</strong> implements the following interfaces:</p>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">IPolynomialProps</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">IStrokeProps</span>, <span class="hljs-title class_">IFillProps</span> {
+    <span class="hljs-attr">points</span>: <span class="hljs-title class_">Vector2</span>[];
+    closed?: <span class="hljs-built_in">boolean</span>;
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-attr">polynomial</span>: <span class="hljs-function">(<span class="hljs-params">props: IPolynomialProps, ctx: CanvasRenderingContext2D</span>) =&gt;</span> <span class="hljs-built_in">void</span>;</code></pre>
 </div>
 
-      <div class="w-800 max-w-full mx-auto grid  gap-8 items-center text-slate-500">
+      <div class="w-800 max-w-full mx-auto grid lg:grid-cols-2 gap-8 items-center text-slate-500">
 <div class="flex justify-between items-start border border-slate-200 rounded p-4">
   <a href="/pages/circle-path.html" title="" class="mr-4 hover:text-blue-500">
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
@@ -164,6 +178,21 @@
     <a href="/pages/circle-path.html" title="" class="hover:text-blue-500">Circle Path</a>
   </div>
 </div>      
+    
+<div class="flex justify-between items-start border border-slate-200 rounded p-4">
+  
+  <div class="flex flex-col justify-center">
+    <div class="mb-2 text-sm text-slate-300">Next</div>
+    <a href="/pages/polynomial-path.html" title="" class="hover:text-blue-500">Polynomial Path</a>
+  </div>
+  
+  <a href="/pages/polynomial-path.html" title="" class="mr-4 hover:text-blue-500">
+    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
+     <path stroke="none" d="M0 0h24v24H0z"/>
+     <path d="M5 12h14m-6 6 6-6m-6-6 6 6"/>
+  </svg>
+  </a>
+</div>  
     </div>
     </div>
 
@@ -176,6 +205,6 @@
   </div>
 </footer>-->
 
-<script src="/js/index.1682340548556.js"></script>
+<script src="/js/index.1682364785901.js"></script>
 </body>
 </html>

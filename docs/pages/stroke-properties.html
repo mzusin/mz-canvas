@@ -124,65 +124,54 @@
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/rectangle.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-sky-500">Rectangle</a><a href="/pages/rectangle-path.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Rectangle Path</a><a href="/pages/circle.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Circle</a><a href="/pages/circle-path.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Circle Path</a><a href="/pages/polynomial.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Polynomial</a><a href="/pages/polynomial-path.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Polynomial Path</a><a href="/pages/line.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Line</a><a href="/pages/line-path.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Line Path</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="30-interfaces">
+    </div><div class="flex flex-col" data-links><a href="/pages/rectangle.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Rectangle</a><a href="/pages/rectangle-path.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Rectangle Path</a><a href="/pages/circle.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Circle</a><a href="/pages/circle-path.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Circle Path</a><a href="/pages/polynomial.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Polynomial</a><a href="/pages/polynomial-path.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Polynomial Path</a><a href="/pages/line.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Line</a><a href="/pages/line-path.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Line Path</a></div><div class="text-xl my-4 flex items-center cursor-pointer" data-collapsible-title data-opened="true" data-id="30-interfaces">
         Interfaces 
         <svg data-arrow xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#626e7f" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="ml-2 rotate-90" viewBox="0 0 24 24">
           <path stroke="none" d="M0 0h24v24H0z"/>
           <path d="m7 7 5 5-5 5m6-10 5 5-5 5"/>
         </svg>
 
-    </div><div class="flex flex-col" data-links><a href="/pages/fill-properties.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Fill Properties</a><a href="/pages/stroke-properties.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-slate-500">Stroke Properties</a></div>
+    </div><div class="flex flex-col" data-links><a href="/pages/fill-properties.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600 pb-2 text-slate-500">Fill Properties</a><a href="/pages/stroke-properties.html" title="" class="pl-3 border-l border-slate-150 dark:border-slate-600  text-sky-500">Stroke Properties</a></div>
       </div>
     </div>
 
     <div class="p-4 overflow-y-auto h-full md:w-100-350 dark:bg-slate-800">
-      <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h1 class="text-3xl mb-8">Rectangle</h1>
-<p class="mb-4">The <strong class="font-bold">rect()</strong> function is used to draw a rectangular shape.</p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { canvas, rect } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-canvas&#x27;</span>;
+      <div class="w-800 max-w-full mx-auto my-10 leading-7 text-lg text-slate-800 dark:text-slate-200"><h1 class="text-3xl mb-8">Stroke Properties</h1>
+<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">IStrokeProps</span> {
 
-<span class="hljs-keyword">const</span> { ctx, $canvas } = <span class="hljs-title function_">canvas</span>({
-    <span class="hljs-attr">width</span>: <span class="hljs-number">100</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-number">200</span>
-});
+    <span class="hljs-comment">// Line color</span>
+    strokeStyle?: <span class="hljs-built_in">string</span>;
 
-<span class="hljs-title function_">rect</span>({
-    <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-attr">w</span>: <span class="hljs-number">300</span>,
-    <span class="hljs-attr">h</span>: <span class="hljs-number">300</span>,
-    <span class="hljs-attr">fillStyle</span>: <span class="hljs-string">&#x27;#366d8c&#x27;</span>,
-    <span class="hljs-attr">strokeStyle</span>: <span class="hljs-string">&#x27;#0f2b38&#x27;</span>,
-    <span class="hljs-attr">lineWidth</span>: <span class="hljs-number">15</span>,
-}, ctx);
+    <span class="hljs-comment">// Sets the width of lines drawn in the future.</span>
+    lineWidth?: <span class="hljs-built_in">number</span>;
 
-<span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">append</span>($canvas);</code></pre>
-<p class="mb-4">You can also clear the rectangle as follows:</p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-title function_">rect</span>({
-    <span class="hljs-attr">x</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-attr">y</span>: <span class="hljs-number">0</span>,
-    <span class="hljs-attr">w</span>: <span class="hljs-number">300</span>,
-    <span class="hljs-attr">h</span>: <span class="hljs-number">300</span>,
-    <span class="hljs-attr">clear</span>: <span class="hljs-literal">true</span>,
-}, ctx);</code></pre>
-<p class="mb-4">The <strong class="font-bold">rect()</strong> implements the following interfaces:</p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">IRect</span> {
-    <span class="hljs-attr">x</span>: <span class="hljs-built_in">number</span>;
-    <span class="hljs-attr">y</span>: <span class="hljs-built_in">number</span>;
-    <span class="hljs-attr">w</span>: <span class="hljs-built_in">number</span>;
-    <span class="hljs-attr">h</span>: <span class="hljs-built_in">number</span>;
-    radii?: <span class="hljs-built_in">number</span>|<span class="hljs-built_in">number</span>[]; <span class="hljs-comment">// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/roundRect</span>
-}
+    <span class="hljs-comment">// Sets the appearance of the ends of lines.</span>
+    <span class="hljs-comment">// &quot;butt&quot;, &quot;round&quot;, &quot;square&quot;. The default is &quot;butt&quot;.</span>
+    lineCap?: <span class="hljs-built_in">string</span>;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">IRectProps</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">IRect</span>, <span class="hljs-title class_">IStrokeProps</span>, <span class="hljs-title class_">IFillProps</span> {
-    clear?: <span class="hljs-built_in">boolean</span>;
-}
+    <span class="hljs-comment">// Sets the appearance of the &quot;corners&quot; where lines meet.</span>
+    <span class="hljs-comment">// &quot;round&quot;, &quot;bevel&quot;, and &quot;miter&quot;. The default is &quot;miter&quot;.</span>
+    lineJoin?: <span class="hljs-built_in">string</span>;
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-attr">rect</span>: <span class="hljs-function">(<span class="hljs-params">props: IRectProps, ctx: CanvasRenderingContext2D</span>) =&gt;</span> <span class="hljs-built_in">void</span>;</code></pre>
+    <span class="hljs-comment">// Establishes a limit on the miter when two lines join at a sharp angle,</span>
+    <span class="hljs-comment">// to let you control how thick the junction becomes.</span>
+    <span class="hljs-comment">// Zero, negative, Infinity, and NaN values are ignored.</span>
+    <span class="hljs-comment">// The default value is 10.0.</span>
+    miterLimit?: <span class="hljs-built_in">number</span>;
+
+    <span class="hljs-comment">// Used in setLineDash() that defines the current line dash pattern.</span>
+    <span class="hljs-comment">// For example, [5, 15]</span>
+    lineDashSegments?: <span class="hljs-built_in">number</span>[];
+
+    <span class="hljs-comment">// Specifies where to start a dash array on a line.</span>
+    <span class="hljs-comment">// The default value is 0.</span>
+    lineDashOffset?: <span class="hljs-built_in">number</span>;
+}</code></pre>
 </div>
 
-      <div class="w-800 max-w-full mx-auto grid lg:grid-cols-2 gap-8 items-center text-slate-500">
+      <div class="w-800 max-w-full mx-auto grid  gap-8 items-center text-slate-500">
 <div class="flex justify-between items-start border border-slate-200 rounded p-4">
-  <a href="/pages/basic-usage.html" title="" class="mr-4 hover:text-blue-500">
+  <a href="/pages/fill-properties.html" title="" class="mr-4 hover:text-blue-500">
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
     <path stroke="none" d="M0 0h24v24H0z"/>
     <path d="M5 12h14M5 12l6 6m-6-6 6-6"/>
@@ -190,24 +179,9 @@
   </a>
   <div class="flex flex-col items-end justify-center">
     <div class="mb-2 text-sm text-slate-300">Previous</div>
-    <a href="/pages/basic-usage.html" title="" class="hover:text-blue-500">Basic Usage</a>
+    <a href="/pages/fill-properties.html" title="" class="hover:text-blue-500">Fill Properties</a>
   </div>
 </div>      
-    
-<div class="flex justify-between items-start border border-slate-200 rounded p-4">
-  
-  <div class="flex flex-col justify-center">
-    <div class="mb-2 text-sm text-slate-300">Next</div>
-    <a href="/pages/rectangle-path.html" title="" class="hover:text-blue-500">Rectangle Path</a>
-  </div>
-  
-  <a href="/pages/rectangle-path.html" title="" class="mr-4 hover:text-blue-500">
-    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24">
-     <path stroke="none" d="M0 0h24v24H0z"/>
-     <path d="M5 12h14m-6 6 6-6m-6-6 6 6"/>
-  </svg>
-  </a>
-</div>  
     </div>
     </div>
 

@@ -45,7 +45,7 @@ declare module 'mz-canvas' {
         clear?: boolean;
     }
 
-    export interface IPathProps extends IStrokeProps, IFillProps {
+    export interface IPolynomialProps extends IStrokeProps, IFillProps {
         points: Vector2[];
         closed?: boolean;
     }
@@ -95,8 +95,8 @@ declare module 'mz-canvas' {
     export const linePath: (props: ILineProps, ctx?: CanvasRenderingContext2D) => Path2D;
     export const rect: (props: IRectProps, ctx: CanvasRenderingContext2D) => void;
     export const rectPath: (props: IRectProps, ctx?: CanvasRenderingContext2D) => Path2D;
-    export const polynomial: (props: IPathProps, ctx: CanvasRenderingContext2D) => void;
-    export const polynomialPath: (props: IPathProps, ctx?: CanvasRenderingContext2D) => Path2D;
+    export const polynomial: (props: IPolynomialProps, ctx: CanvasRenderingContext2D) => void;
+    export const polynomialPath: (props: IPolynomialProps, ctx?: CanvasRenderingContext2D) => Path2D;
     export const circle: (props: ICircleProps, ctx: CanvasRenderingContext2D) => void;
     export const circlePath: (props: ICircleProps, ctx?: CanvasRenderingContext2D) => Path2D;
     export const text: (props: ITextProps, ctx: CanvasRenderingContext2D) => void;

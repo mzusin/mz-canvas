@@ -1,6 +1,6 @@
 import { fill, stroke } from '../canvas';
 import {
-    IPathProps,
+    IPolynomialProps,
     IRectProps,
     ICircleProps,
     ILineProps,
@@ -18,12 +18,6 @@ export const line = (props: ILineProps, ctx: CanvasRenderingContext2D) => {
     ctx.beginPath();
     ctx.moveTo(x1, y1);
     ctx.lineTo(x2, y2);
-
-
-    if(props.fillStyle){
-        fill(props, ctx);
-        ctx.fill();
-    }
 
     if(props.strokeStyle){
         stroke(props, ctx);
@@ -48,11 +42,6 @@ export const linePath = (props: ILineProps, ctx?: CanvasRenderingContext2D) : Pa
     if(!ctx) return path;
 
     ctx.save();
-
-    if(props.fillStyle){
-        fill(props, ctx);
-        ctx.fill(path);
-    }
 
     if(props.strokeStyle){
         stroke(props, ctx);
@@ -153,7 +142,7 @@ export const rectPath = (props: IRectProps, ctx?: CanvasRenderingContext2D) : Pa
 /**
  * Used to draw polynomials like triangles etc.
  */
-export const polynomial = (props: IPathProps, ctx: CanvasRenderingContext2D) => {
+export const polynomial = (props: IPolynomialProps, ctx: CanvasRenderingContext2D) => {
 
     const { points } = props;
 
@@ -193,7 +182,7 @@ export const polynomial = (props: IPathProps, ctx: CanvasRenderingContext2D) => 
 /**
  * Used to draw polynomials like triangles etc.
  */
-export const polynomialPath = (props: IPathProps, ctx?: CanvasRenderingContext2D) : Path2D => {
+export const polynomialPath = (props: IPolynomialProps, ctx?: CanvasRenderingContext2D) : Path2D => {
 
     const { points } = props;
 

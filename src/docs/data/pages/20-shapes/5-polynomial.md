@@ -22,3 +22,14 @@ polynomial({
 
 document.body.append($canvas);
 ```
+
+The **polynomial()** implements the following interfaces:
+
+```ts
+export interface IPolynomialProps extends IStrokeProps, IFillProps {
+    points: Vector2[];
+    closed?: boolean;
+}
+
+export const polynomial: (props: IPolynomialProps, ctx: CanvasRenderingContext2D) => void;
+```

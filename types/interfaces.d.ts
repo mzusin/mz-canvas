@@ -41,7 +41,7 @@ export interface ILine {
     x2: number;
     y2: number;
 }
-export interface ILineProps extends ILine, IStrokeProps, IFillProps {
+export interface ILineProps extends ILine, IStrokeProps {
 }
 export interface IRect {
     x: number;

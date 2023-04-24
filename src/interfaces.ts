@@ -104,7 +104,7 @@ export interface IRectProps extends IRect, IStrokeProps, IFillProps {
     clear?: boolean;
 }
 
-export interface IPathProps extends IStrokeProps, IFillProps {
+export interface IPolynomialProps extends IStrokeProps, IFillProps {
     points: Vector2[];
     closed?: boolean;
 }

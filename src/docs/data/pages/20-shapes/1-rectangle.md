@@ -35,3 +35,21 @@ rect({
 }, ctx);
 ```
 
+The **rect()** implements the following interfaces:
+
+```ts
+export interface IRect {
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+    radii?: number|number[]; // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/roundRect
+}
+
+export interface IRectProps extends IRect, IStrokeProps, IFillProps {
+    clear?: boolean;
+}
+
+export const rect: (props: IRectProps, ctx: CanvasRenderingContext2D) => void;
+```
+

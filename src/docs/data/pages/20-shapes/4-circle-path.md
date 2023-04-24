@@ -53,3 +53,21 @@ console.log(circle);
 document.body.append($canvas);
 ```
 
+The **circlePath()** implements the following interfaces:
+
+```ts
+export interface ICircle {
+    cx: number;
+    cy: number;
+    r: number;
+    startAngleRad?: number;
+    endAngleRad?: number;
+    counterclockwise?: boolean;
+}
+
+export interface ICircleProps extends ICircle, IStrokeProps, IFillProps { }
+
+export const circlePath: (props: ICircleProps, ctx?: CanvasRenderingContext2D) => Path2D;
+```
+
+
