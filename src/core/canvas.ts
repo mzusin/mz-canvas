@@ -37,6 +37,11 @@ export const canvas = (props: ICanvas) => {
         $canvas.width = (props.width as number) * dpr;
         $canvas.height = (props.height as number) * dpr;
     }
+    else{
+        const rect = $canvas.getBoundingClientRect();
+        $canvas.width = rect.width * dpr;
+        $canvas.height = rect.height * dpr;
+    }
 
     setAttributes($canvas, [
         ['id', props.id],
