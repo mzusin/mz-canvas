@@ -3,11 +3,102 @@
 ## Documentation 🔖
 ### Getting Started 
 - [Basic Usage](https://canvas.mzsoft.org/pages/basic-usage.html)
-- [Nodejs](https://canvas.mzsoft.org/pages/nodejs.html)
-### Another 
-- [Width Height And Border Radius](https://canvas.mzsoft.org/pages/width-height-and-border-radius.html)
-- [Colors](https://canvas.mzsoft.org/pages/colors.html)
+### Shapes 
+- [Rectangle](https://canvas.mzsoft.org/pages/rectangle.html)
+- [Rectangle Path](https://canvas.mzsoft.org/pages/rectangle-path.html)
+- [Circle](https://canvas.mzsoft.org/pages/circle.html)
+- [Circle Path](https://canvas.mzsoft.org/pages/circle-path.html)
+- [Polynomial](https://canvas.mzsoft.org/pages/polynomial.html)
 ------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

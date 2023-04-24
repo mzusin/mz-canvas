@@ -1,13 +1,13 @@
 import { IRectPathProps, IPathProps, IRectProps, ICircleProps, ICirclePathProps } from '../../interfaces';
 /**
- * Draw a rectangle including rounded.
- * Can also "clear the rect".
+ * Draw a rectangle, including a rectangle with rounded corners.
+ * Can also "clear" a rectangular space.
  */
 export declare const rect: (props: IRectProps, ctx: CanvasRenderingContext2D) => void;
 /**
  * Used to draw polynomials like triangles etc.
  */
-export declare const path: (props: IPathProps, ctx: CanvasRenderingContext2D) => void;
+export declare const polynomial: (props: IPathProps, ctx: CanvasRenderingContext2D) => void;
 /**
  * Get Path2D of a rectangle, and optionally draw it.
  */

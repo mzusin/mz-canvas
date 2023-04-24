@@ -1,6 +1,6 @@
 declare const api: {
     rect: (props: import("./interfaces").IRectProps, ctx: CanvasRenderingContext2D) => void;
-    path: (props: import("./interfaces").IPathProps, ctx: CanvasRenderingContext2D) => void;
+    polynomial: (props: import("./interfaces").IPathProps, ctx: CanvasRenderingContext2D) => void;
     rectPath: (props: import("./interfaces").IRectPathProps, ctx?: CanvasRenderingContext2D | undefined) => Path2D;
     circle: (props: import("./interfaces").ICircleProps, ctx: CanvasRenderingContext2D) => void;
     circlePath: (props: import("./interfaces").ICirclePathProps, ctx?: CanvasRenderingContext2D | undefined) => Path2D;

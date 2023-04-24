@@ -12,7 +12,7 @@
 </head>
 <body>
 
-  <script src="../../dist/mz-canvas.min.js"></script>
+  <script src="../../../dist/mz-canvas.min.js"></script>
   <script>
     const triangle = () => {
       const { ctx, $canvas } = mzCanvas.canvas({
@@ -20,7 +20,7 @@
         height: 300,
       });
 
-      mzCanvas.path({
+      mzCanvas.polynomial({
         points: [[75, 50], [100, 75], [100, 25]],
         closed: true,
 

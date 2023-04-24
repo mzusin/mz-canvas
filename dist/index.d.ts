@@ -46,8 +46,7 @@ declare module 'mz-canvas' {
         points: Vector2[];
         closed?: boolean;
     }
-    export interface IRectPathProps extends IRect, IStrokeProps, IFillProps {
-    }
+    export interface IRectPathProps extends IRect, IStrokeProps, IFillProps { }
     export interface ICircle {
         cx: number;
         cy: number;
@@ -71,8 +70,6 @@ declare module 'mz-canvas' {
         direction?: string;
     }
 
-    export const text: (props: ITextProps, ctx: CanvasRenderingContext2D) => void;
-
     export const setContextProps: (props: [string, string | number | undefined][], ctx: CanvasRenderingContext2D) => void;
     export const canvas: (props: ICanvas) => {
         ctx: CanvasRenderingContext2D | null;
@@ -82,9 +79,9 @@ declare module 'mz-canvas' {
     export const fill: (props: IFillProps, ctx: CanvasRenderingContext2D) => void;
 
     export const rect: (props: IRectProps, ctx: CanvasRenderingContext2D) => void;
-    export const path: (props: IPathProps, ctx: CanvasRenderingContext2D) => void;
+    export const polynomial: (props: IPathProps, ctx: CanvasRenderingContext2D) => void;
     export const rectPath: (props: IRectPathProps, ctx?: CanvasRenderingContext2D) => Path2D;
     export const circle: (props: ICircleProps, ctx: CanvasRenderingContext2D) => void;
     export const circlePath: (props: ICirclePathProps, ctx?: CanvasRenderingContext2D) => Path2D;
-
+    export const text: (props: ITextProps, ctx: CanvasRenderingContext2D) => void;
 }

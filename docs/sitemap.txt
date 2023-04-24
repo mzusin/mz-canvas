@@ -1,5 +1,7 @@
 https://canvas.mzsoft.org
 https://canvas.mzsoft.org/pages/basic-usage.html
-https://canvas.mzsoft.org/pages/nodejs.html
-https://canvas.mzsoft.org/pages/width-height-and-border-radius.html
-https://canvas.mzsoft.org/pages/colors.html
+https://canvas.mzsoft.org/pages/rectangle.html
+https://canvas.mzsoft.org/pages/rectangle-path.html
+https://canvas.mzsoft.org/pages/circle.html
+https://canvas.mzsoft.org/pages/circle-path.html
+https://canvas.mzsoft.org/pages/polynomial.html

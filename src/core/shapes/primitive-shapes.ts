@@ -2,8 +2,8 @@ import { fill, stroke } from '../canvas';
 import { IRectPathProps, IPathProps, IRectProps, ICircleProps, ICirclePathProps } from '../../interfaces';
 
 /**
- * Draw a rectangle including rounded.
- * Can also "clear the rect".
+ * Draw a rectangle, including a rectangle with rounded corners.
+ * Can also "clear" a rectangular space.
  */
 export const rect = (props: IRectProps, ctx: CanvasRenderingContext2D) => {
 
@@ -54,7 +54,7 @@ export const rect = (props: IRectProps, ctx: CanvasRenderingContext2D) => {
 /**
  * Used to draw polynomials like triangles etc.
  */
-export const path = (props: IPathProps, ctx: CanvasRenderingContext2D) => {
+export const polynomial = (props: IPathProps, ctx: CanvasRenderingContext2D) => {
 
     const { points } = props;
 

@@ -43,7 +43,7 @@ export interface IStrokeProps {
 
     // Used in setLineDash() that defines the current line dash pattern.
     // For example, [5, 15]
-    lineDashSegments: number[];
+    lineDashSegments?: number[];
 
     // Specifies where to start a dash array on a line.
     // The default value is 0.
