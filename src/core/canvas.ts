@@ -37,6 +37,8 @@ export const setCanvasSize = (
         const isCanvasInDOM = !!$canvas.parentNode;
 
         if(!isCanvasInDOM){
+            $canvas.style.width = props.width.toString();
+            $canvas.style.height = props.height.toString();
             document.body.append($canvas);
         }
 
