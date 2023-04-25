@@ -1,6 +1,6 @@
 declare module 'mz-canvas' {
 
-    import { Vector2 } from 'mz-math/types/types';
+    import { Vector2 } from 'mz-math';
 
     export interface ICanvas {
         width: number | string;
