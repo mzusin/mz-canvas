@@ -3,8 +3,8 @@ declare module 'mz-canvas' {
     import { Vector2 } from 'mz-math';
 
     export interface ICanvas {
-        width: number | string;
-        height: number | string;
+        width: number;
+        height: number;
         id?: string;
         classes?: string;
         style?: string;
@@ -14,7 +14,6 @@ declare module 'mz-canvas' {
         fallback?: string;
         ariaLabel?: string;
         contextAttributes?: CanvasRenderingContext2DSettings;
-        restoreImageDataOnResize?: boolean
     }
 
     export interface IStrokeProps {
@@ -84,7 +83,6 @@ declare module 'mz-canvas' {
     }
 
     export const setContextProps: (props: [string, string | number | undefined][], ctx: CanvasRenderingContext2D) => void;
-    export const setCanvasSize: ($canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D | null, props: ICanvas) => void;
 
     export const canvas: (props: ICanvas) => {
         ctx: CanvasRenderingContext2D | null;

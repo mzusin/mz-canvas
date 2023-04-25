@@ -1,5 +1,4 @@
 import { ICanvas, IFillProps, IStrokeProps } from '../interfaces';
-import { isNumber } from 'mz-math';
 
 const setAttributes = ($canvas: HTMLCanvasElement, attributes: [string, string|number|undefined][]) => {
     for(const attr of attributes){
@@ -20,39 +19,6 @@ export const setContextProps = (props: [string, string|number|undefined][], ctx:
 
         const key = prop[0];
         ctx[key] = value;
-    }
-};
-
-export const setCanvasSize = (
-    $canvas: HTMLCanvasElement,
-    ctx: CanvasRenderingContext2D|null,
-    props: ICanvas
-) => {
-
-    const isNumericDims = isNumber(props.width) && isNumber(props.height);
-    let _width = isNumericDims ? (props.width as number) : window.innerWidth;
-    let _height = isNumericDims ? (props.height as number) : window.innerHeight;
-    const isCanvasInDOM = !!$canvas.parentNode;
-
-    if(!isNumericDims && isCanvasInDOM){
-        const rect = $canvas.getBoundingClientRect();
-        _width = rect.width;
-        _height = rect.height;
-    }
-
-    let imageData: ImageData|undefined = undefined;
-
-    if(props.restoreImageDataOnResize){
-        // changing the size of the canvas clears it;
-        // save it, and then restore
-        imageData = ctx?.getImageData(0, 0, $canvas.width, $canvas.height);
-    }
-
-    $canvas.width = _width;
-    $canvas.height = _height;
-
-    if(props.restoreImageDataOnResize && ctx && imageData ){
-        ctx.putImageData(imageData, 0, 0);
     }
 };
 
@@ -82,7 +48,8 @@ export const canvas = (props: ICanvas) => {
             $canvas.getContext('2d', props.contextAttributes) :
             null;
 
-    setCanvasSize($canvas, ctx, props);
+    $canvas.width = props.width;
+    $canvas.height = props.height;
 
     return { ctx, $canvas };
 };

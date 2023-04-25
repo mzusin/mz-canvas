@@ -23,23 +23,12 @@ const { ctx, $canvas } = canvas({
 });
 ```
 
-You can also specify other units than pixels:
-
-```js
-import { canvas } from 'mz-canvas';
-
-const { ctx, $canvas } = canvas({
-    width: '100%',
-    height: '100%',
-});
-```
-
 The **canvas()** implements the following interfaces:
 
 ```ts
 export interface ICanvas {
-    width: number|string;
-    height: number|string;
+    width: number;
+    height: number;
 
     id?: string;
     classes?: string;
@@ -54,10 +43,6 @@ export interface ICanvas {
 
     // attributes like alpha, colorSpace, willReadFrequently, etc.
     contextAttributes?: CanvasRenderingContext2DSettings;
-
-    // if true, it will use getImageData / putImageData 
-    // when canvas size changes (it affects performance)
-    restoreImageDataOnResize?: boolean;
 }
 
 export const canvas: (props: ICanvas) => {

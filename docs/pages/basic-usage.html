@@ -17,8 +17,8 @@
   <link id="favicon-16" rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16.png" />
 
   <link rel="stylesheet" href="/highlight.js/styles/tokyo-night-dark.css" />
-  <link rel="stylesheet" href="/css/styles.1682432972911.css" />
-  <!--<link rel="stylesheet" href="/js/index.1682432972911.css" />-->
+  <link rel="stylesheet" href="/css/styles.1682439687689.css" />
+  <!--<link rel="stylesheet" href="/js/index.1682439687689.css" />-->
 
 </head>
 <body class="h-screen flex flex-col font-roboto bg-white dark:bg-slate-900 dark:text-slate-100">
@@ -148,17 +148,10 @@
     <span class="hljs-attr">width</span>: <span class="hljs-number">100</span>, <span class="hljs-comment">// px</span>
     <span class="hljs-attr">height</span>: <span class="hljs-number">200</span>, <span class="hljs-comment">// px</span>
 });</code></pre>
-<p class="mb-4">You can also specify other units than pixels:</p>
-<pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">import</span> { canvas } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;mz-canvas&#x27;</span>;
-
-<span class="hljs-keyword">const</span> { ctx, $canvas } = <span class="hljs-title function_">canvas</span>({
-    <span class="hljs-attr">width</span>: <span class="hljs-string">&#x27;100%&#x27;</span>,
-    <span class="hljs-attr">height</span>: <span class="hljs-string">&#x27;100%&#x27;</span>,
-});</code></pre>
 <p class="mb-4">The <strong class="font-bold">canvas()</strong> implements the following interfaces:</p>
 <pre class="hljs p-4 mb-4 rounded-md shadow-xl overflow-auto whitespace-pre-wrap text-base"><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">ICanvas</span> {
-    <span class="hljs-attr">width</span>: <span class="hljs-built_in">number</span>|<span class="hljs-built_in">string</span>;
-    <span class="hljs-attr">height</span>: <span class="hljs-built_in">number</span>|<span class="hljs-built_in">string</span>;
+    <span class="hljs-attr">width</span>: <span class="hljs-built_in">number</span>;
+    <span class="hljs-attr">height</span>: <span class="hljs-built_in">number</span>;
 
     id?: <span class="hljs-built_in">string</span>;
     classes?: <span class="hljs-built_in">string</span>;
@@ -173,10 +166,6 @@
 
     <span class="hljs-comment">// attributes like alpha, colorSpace, willReadFrequently, etc.</span>
     contextAttributes?: <span class="hljs-title class_">CanvasRenderingContext2DSettings</span>;
-
-    <span class="hljs-comment">// if true, it will use getImageData / putImageData </span>
-    <span class="hljs-comment">// when canvas size changes (it affects performance)</span>
-    restoreImageDataOnResize?: <span class="hljs-built_in">boolean</span>;
 }
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-attr">canvas</span>: <span class="hljs-function">(<span class="hljs-params">props: ICanvas</span>) =&gt;</span> {
@@ -212,6 +201,6 @@
   </div>
 </footer>-->
 
-<script src="/js/index.1682432972911.js"></script>
+<script src="/js/index.1682439687689.js"></script>
 </body>
 </html>

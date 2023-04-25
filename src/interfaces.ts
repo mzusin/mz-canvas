@@ -1,8 +1,8 @@
 import { Vector2 } from 'mz-math';
 
 export interface ICanvas {
-    width: number|string;
-    height: number|string;
+    width: number;
+    height: number;
 
     id?: string;
     classes?: string;
@@ -16,7 +16,6 @@ export interface ICanvas {
     ariaLabel?: string;
 
     contextAttributes?: CanvasRenderingContext2DSettings;
-    restoreImageDataOnResize?: boolean
 }
 
 /**
