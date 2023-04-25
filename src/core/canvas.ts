@@ -23,7 +23,11 @@ export const setContextProps = (props: [string, string|number|undefined][], ctx:
     }
 };
 
-export const setCanvasSize = ($canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D|null, props: ICanvas) => {
+export const setCanvasSize = (
+    $canvas: HTMLCanvasElement,
+    ctx: CanvasRenderingContext2D|null,
+    props: ICanvas
+) => {
 
     const isNumericDims = isNumber(props.width) && isNumber(props.height);
     let _width = isNumericDims ? (props.width as number) : 0;
@@ -45,14 +49,18 @@ export const setCanvasSize = ($canvas: HTMLCanvasElement, ctx: CanvasRenderingCo
         }
     }
 
-    // changing the size of the canvas clears it;
-    // save it, and then restore
-    const imageData = ctx?.getImageData(0, 0, $canvas.width, $canvas.height);
+    let imageData: ImageData|undefined = undefined;
+
+    if(props.restoreImageDataOnResize){
+        // changing the size of the canvas clears it;
+        // save it, and then restore
+        imageData = ctx?.getImageData(0, 0, $canvas.width, $canvas.height);
+    }
 
     $canvas.width = _width;
     $canvas.height = _height;
 
-    if(ctx && imageData ){
+    if(props.restoreImageDataOnResize && ctx && imageData ){
         ctx.putImageData(imageData, 0, 0);
     }
 };
@@ -78,7 +86,10 @@ export const canvas = (props: ICanvas) => {
         $canvas.textContent = props.fallback;
     }
 
-    const ctx = typeof $canvas.getContext === 'function' ? $canvas.getContext('2d') : null;
+    const ctx =
+        typeof $canvas.getContext === 'function' ?
+            $canvas.getContext('2d', props.contextAttributes) :
+            null;
 
     setCanvasSize($canvas, ctx, props);
 

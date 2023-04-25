@@ -51,6 +51,13 @@ export interface ICanvas {
     role?: string;
     fallback?: string;
     ariaLabel?: string;
+
+    // attributes like alpha, colorSpace, willReadFrequently, etc.
+    contextAttributes?: CanvasRenderingContext2DSettings;
+
+    // if true, it will use getImageData / putImageData 
+    // when canvas size changes (it affects performance)
+    restoreImageDataOnResize?: boolean;
 }
 
 export const canvas: (props: ICanvas) => {

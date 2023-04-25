@@ -13,6 +13,8 @@ declare module 'mz-canvas' {
         role?: string;
         fallback?: string;
         ariaLabel?: string;
+        contextAttributes?: CanvasRenderingContext2DSettings;
+        restoreImageDataOnResize?: boolean
     }
 
     export interface IStrokeProps {

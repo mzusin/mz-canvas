@@ -1,4 +1,4 @@
-import { Vector2 } from 'mz-math/types/types';
+import { Vector2 } from 'mz-math';
 
 export interface ICanvas {
     width: number|string;
@@ -14,6 +14,9 @@ export interface ICanvas {
     role?: string;
     fallback?: string;
     ariaLabel?: string;
+
+    contextAttributes?: CanvasRenderingContext2DSettings;
+    restoreImageDataOnResize?: boolean
 }
 
 /**
