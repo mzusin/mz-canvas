@@ -30,25 +30,14 @@ export const setCanvasSize = (
 ) => {
 
     const isNumericDims = isNumber(props.width) && isNumber(props.height);
-    let _width = isNumericDims ? (props.width as number) : 0;
-    let _height = isNumericDims ? (props.height as number) : 0;
+    let _width = isNumericDims ? (props.width as number) : window.innerWidth;
+    let _height = isNumericDims ? (props.height as number) : window.innerHeight;
+    const isCanvasInDOM = !!$canvas.parentNode;
 
-    if(!isNumericDims){
-        const isCanvasInDOM = !!$canvas.parentNode;
-
-        if(!isCanvasInDOM){
-            $canvas.style.width = props.width.toString();
-            $canvas.style.height = props.height.toString();
-            document.body.append($canvas);
-        }
-
+    if(!isNumericDims && isCanvasInDOM){
         const rect = $canvas.getBoundingClientRect();
         _width = rect.width;
         _height = rect.height;
-
-        if(!isCanvasInDOM){
-            $canvas.remove();
-        }
     }
 
     let imageData: ImageData|undefined = undefined;
