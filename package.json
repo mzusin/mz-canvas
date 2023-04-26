@@ -65,6 +65,7 @@
     "karma-spec-reporter": "^0.0.36",
     "markdown-documentation-maker": "^1.0.19",
     "mz-math": "^3.0.8",
+    "mz-particles": "^1.0.6",
     "mz-svg": "^1.0.10"
   }
 }
