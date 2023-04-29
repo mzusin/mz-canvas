@@ -18,12 +18,11 @@ export const settings = {
     outfile: './dist/mz-canvas.min.js',
     banner: {
         js: `/* 
-mzCanvas a TypeScript-based library for manipulating canvas element and 2D graphics in the browser.
-Version: ${version}
-Author: Miriam Zusin     
-Contact: miriam.zusin@gmail.com
-Documentation: https://github.com/mzusin/mz-canvas
-Licensed GPLv3 for open source use, or Commercial License for commercial use - https://github.com/mzusin/index/blob/main/LICENSE.md                 
+mzCanvas v${ version }
+TypeScript-based library for manipulating canvas element and 2D graphics in the browser.
+https://github.com/mzusin/mz-canvas
+Licensed GPLv3 for open source use, or Commercial License for commercial use - https://github.com/mzusin/index/blob/main/LICENSE.md        
+Copyright (c) 2023-present, Miriam Zusin          
 */`,
     },
 };
