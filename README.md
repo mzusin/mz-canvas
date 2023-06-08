@@ -11,6 +11,7 @@
 - [Circle](https://canvas.mzsoft.org/pages/circle.html)
 - [Circle Path](https://canvas.mzsoft.org/pages/circle-path.html)
 - [Polynomial](https://canvas.mzsoft.org/pages/polynomial.html)
+- [Polynomial From Center](https://canvas.mzsoft.org/pages/polynomial-from-center.html)
 - [Polynomial Path](https://canvas.mzsoft.org/pages/polynomial-path.html)
 - [Line](https://canvas.mzsoft.org/pages/line.html)
 - [Line Path](https://canvas.mzsoft.org/pages/line-path.html)
@@ -18,6 +19,27 @@
 - [Fill Properties](https://canvas.mzsoft.org/pages/fill-properties.html)
 - [Stroke Properties](https://canvas.mzsoft.org/pages/stroke-properties.html)
 ------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

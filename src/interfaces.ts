@@ -111,6 +111,14 @@ export interface IPolynomialProps extends IStrokeProps, IFillProps {
     closed?: boolean;
 }
 
+export interface IPolynomialFromCenterProps extends IStrokeProps, IFillProps {
+    cx: number;
+    cy: number;
+    r: number;
+    sides: number;
+    rotation?: number;
+}
+
 export interface ICircle {
     cx: number;
     cy: number;

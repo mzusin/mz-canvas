@@ -5,6 +5,7 @@ https://canvas.mzsoft.org/pages/rectangle-path.html
 https://canvas.mzsoft.org/pages/circle.html
 https://canvas.mzsoft.org/pages/circle-path.html
 https://canvas.mzsoft.org/pages/polynomial.html
+https://canvas.mzsoft.org/pages/polynomial-from-center.html
 https://canvas.mzsoft.org/pages/polynomial-path.html
 https://canvas.mzsoft.org/pages/line.html
 https://canvas.mzsoft.org/pages/line-path.html

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <style>
+      canvas {
+        border: 1px solid #efefef;
+        margin: 1rem;
+      }
+    </style>
+</head>
+<body>
+
+  <script src="../../../dist/mz-canvas.min.js"></script>
+  <script>
+    const demo = (sides) => {
+      const { ctx, $canvas } = mzCanvas.canvas({
+        width: 300,
+        height: 300,
+      });
+
+      mzCanvas.polynomialFromCenter({
+        cx: 150,
+        cy: 150,
+        r: 50,
+        sides,
+
+        fillStyle: '#efefef',
+        strokeStyle: '#163a86',
+        lineWidth: 2,
+      }, ctx);
+
+      document.body.append($canvas);
+    };
+
+    for(let i=3; i<=12; i++){
+        demo(i);
+    }
+
+    const rotationDemo = (sides, rotation) => {
+        const { ctx, $canvas } = mzCanvas.canvas({
+            width: 300,
+            height: 300,
+        });
+
+        mzCanvas.polynomialFromCenter({
+            cx: 150,
+            cy: 150,
+            r: 50,
+            sides,
+            rotation,
+
+            fillStyle: '#efefef',
+            strokeStyle: '#163a86',
+            lineWidth: 2,
+        }, ctx);
+
+        document.body.append($canvas);
+    };
+
+    rotationDemo(4, Math.PI / 180 * 10); // 10 deg
+    rotationDemo(4, Math.PI / 180 * 45); // 45 deg
+    rotationDemo(4, Math.PI / 180 * 20); // 20 deg
+    rotationDemo(4, Math.PI / 180 * 40); // 40 deg
+    rotationDemo(4, Math.PI / 180 * 55); // 55 deg
+  </script>
+</body>
+</html>

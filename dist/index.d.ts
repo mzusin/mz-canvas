@@ -1,3 +1,5 @@
+import { IPolynomialFromCenterProps } from '../types/interfaces';
+
 declare module 'mz-canvas' {
 
     import { Vector2 } from 'mz-math';
@@ -51,6 +53,14 @@ declare module 'mz-canvas' {
         closed?: boolean;
     }
 
+    export interface IPolynomialFromCenterProps extends IStrokeProps, IFillProps {
+        cx: number;
+        cy: number;
+        r: number;
+        sides: number;
+        rotation?: number;
+    }
+
     export interface ICircle {
         cx: number;
         cy: number;
@@ -98,6 +108,7 @@ declare module 'mz-canvas' {
     export const rectPath: (props: IRectProps, ctx?: CanvasRenderingContext2D) => Path2D;
     export const polynomial: (props: IPolynomialProps, ctx: CanvasRenderingContext2D) => void;
     export const polynomialPath: (props: IPolynomialProps, ctx?: CanvasRenderingContext2D) => Path2D;
+    export const polynomialFromCenter: (props: IPolynomialFromCenterProps, ctx: CanvasRenderingContext2D) => void;
     export const circle: (props: ICircleProps, ctx: CanvasRenderingContext2D) => void;
     export const circlePath: (props: ICircleProps, ctx?: CanvasRenderingContext2D) => Path2D;
     export const text: (props: ITextProps, ctx: CanvasRenderingContext2D) => void;

@@ -3,7 +3,7 @@ import {
     IPolynomialProps,
     IRectProps,
     ICircleProps,
-    ILineProps,
+    ILineProps, IPolynomialFromCenterProps,
 } from '../../interfaces';
 
 /**
@@ -220,6 +220,53 @@ export const polynomialPath = (props: IPolynomialProps, ctx?: CanvasRenderingCon
     ctx.restore();
 
     return path;
+};
+
+/**
+ * Draw polynomial defined by a center point and radius.
+ */
+export const polynomialFromCenter = (props: IPolynomialFromCenterProps, ctx: CanvasRenderingContext2D) => {
+    const { cx, cy, r, sides } = props;
+
+    ctx.save();
+
+    fill(props, ctx);
+    stroke(props, ctx);
+
+    // move the canvas to the center position
+    ctx.translate(cx, cy);
+
+    for (let i = 0; i < sides; i++) {
+
+        // calculate the rotation
+        let angle = ((Math.PI * 2) / sides) * i;
+
+        if(props.rotation !== undefined) {
+            angle += props.rotation;
+        }
+
+        if (i === 0) {
+            // for the first point move to
+            ctx.moveTo(r * Math.cos(angle), r * Math.sin(angle));
+        }
+        else {
+            // for the rest draw a line
+            ctx.lineTo(r * Math.cos(angle), r * Math.sin(angle));
+        }
+    }
+
+    ctx.closePath();
+
+    if(props.fillStyle){
+        ctx.fill();
+    }
+
+    if(props.strokeStyle){
+        ctx.stroke();
+    }
+
+    ctx.restore();
+    // ctx.resetTransform();
 };
 
 /**
